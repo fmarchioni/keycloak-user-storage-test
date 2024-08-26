@@ -3,9 +3,7 @@
 
 CREATE USER userdb
     WITH ENCRYPTED PASSWORD 'userdb';
-
---CREATE DATABASE userdb;
-
+CREATE DATABASE userdb;
 ALTER DATABASE userdb
     OWNER TO userdb;
 
@@ -88,12 +86,12 @@ ALTER TABLE ONLY public.users_to_realm_roles
 INSERT INTO public.users VALUES (
     '1',
     CAST(EXTRACT(EPOCH FROM NOW()) * 1000 AS bigint),
-    'fmarchioni@mail.com',
+    'm.mustermann@example.test',
     false,
-    'Francesco',
-    'Marchioni',
-    '$6$xyz$.93lutCQh7gdmqGUmc0pqsyIV6oV.yg/JdutjxPyVxVRhfQnlOaWqbPLlVr.r.CkGAEbx50p7atJLgFxm972z0',
-    'fmarchioni'
+    'Max',
+    'Mustermann',
+    '$6$xyz$C/vOVAshxi1VfgblFW220kcBCpZ7lihIohmNInE5M6wCQdxDaleG6LZzzGiRJ8sOWQHGwtYuz.8kcfZntV1OY/',
+    'mmustermann'
 );
 INSERT INTO public.client_roles VALUES (
     '1', 'testclient', 'admin'
