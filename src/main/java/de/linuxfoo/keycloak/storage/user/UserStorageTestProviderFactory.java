@@ -27,7 +27,7 @@ import java.util.List;
 public class UserStorageTestProviderFactory
 implements UserStorageProviderFactory<UserStorageTestProvider>
 {
-    public static final String PROVIDER_ID = "user-storage-test";
+    public static final String PROVIDER_ID = "rdbms-federation";
     private static final Logger logger = Logger
         .getLogger(UserStorageTestProviderFactory.class);
     private static List<ProviderConfigProperty> configProperties =

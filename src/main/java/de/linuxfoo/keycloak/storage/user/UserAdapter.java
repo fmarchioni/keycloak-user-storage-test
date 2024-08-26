@@ -64,9 +64,6 @@ extends AbstractUserAdapterFederatedStorage
     }
 
     public void setPasswordHash(String password_hash) {
-        if(readOnly) {
-            throw new ReadOnlyException("User is read-only");
-        }
 
         entity.setPasswordHash(password_hash);
         em.persist(entity);
@@ -79,18 +76,12 @@ extends AbstractUserAdapterFederatedStorage
 
     @Override
     public void setUsername(String username) {
-        if(readOnly) {
-            throw new ReadOnlyException("User is read-only");
-        }
 
         entity.setUsername(username);
     }
 
     @Override
     public void setCreatedTimestamp(Long createdTimestamp) {
-        if(readOnly) {
-            throw new ReadOnlyException("User is read-only");
-        }
 
         entity.setCreatedTimestamp(createdTimestamp);
     }
@@ -102,9 +93,6 @@ extends AbstractUserAdapterFederatedStorage
 
     @Override
     public void setEmail(String email) {
-        if(readOnly) {
-            throw new ReadOnlyException("User is read-only");
-        }
 
         entity.setEmail(email);
     }
@@ -131,9 +119,6 @@ extends AbstractUserAdapterFederatedStorage
 
     @Override
     public void setSingleAttribute(String name, String value) {
-        if(readOnly) {
-            throw new ReadOnlyException("User is read-only");
-        }
 
         if (name.equals("firstName")) {
             entity.setFirstName(value);
@@ -146,9 +131,6 @@ extends AbstractUserAdapterFederatedStorage
 
     @Override
     public void removeAttribute(String name) {
-        if(readOnly) {
-            throw new ReadOnlyException("User is read-only");
-        }
 
         if (name.equals("firstName")) {
             entity.setFirstName(null);
@@ -161,9 +143,6 @@ extends AbstractUserAdapterFederatedStorage
 
     @Override
     public void setAttribute(String name, List<String> values) {
-        if(readOnly) {
-            throw new ReadOnlyException("User is read-only");
-        }
 
         if (name.equals("firstName")) {
             entity.setFirstName(values.get(0));
